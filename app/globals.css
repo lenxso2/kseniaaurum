@@ -1,0 +1,138 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-cormorant), ui-serif, Georgia, serif;
+
+  --color-milk: var(--milk);
+  --color-milk-deep: var(--milk-deep);
+  --color-wine: var(--wine);
+  --color-terracotta: var(--terracotta);
+  --color-forest: var(--forest);
+  --color-ocean: var(--ocean);
+  --color-ink: var(--ink);
+  --color-gold: var(--gold);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+}
+
+:root {
+  color-scheme: light;
+  --milk: #f4eee6;
+  --milk-deep: #ebe2d6;
+  --wine: #6e1a1f;
+  --terracotta: #b65a3c;
+  --forest: #2f3e2f;
+  --ocean: #1f3a3d;
+  --ink: #1b1412;
+  --gold: #b8935a;
+
+  --background: var(--milk);
+  --foreground: var(--ink);
+  --card: var(--milk-deep);
+  --card-foreground: var(--ink);
+  --popover: var(--milk);
+  --popover-foreground: var(--ink);
+  --primary: var(--wine);
+  --primary-foreground: var(--milk);
+  --secondary: var(--milk-deep);
+  --secondary-foreground: var(--ink);
+  --muted: var(--milk-deep);
+  --muted-foreground: #5b4f4a;
+  --accent: var(--milk-deep);
+  --accent-foreground: var(--ink);
+  --destructive: var(--wine);
+  --border: rgb(27 20 18 / 0.14);
+  --input: rgb(27 20 18 / 0.2);
+  --ring: var(--gold);
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+    overflow-x: clip;
+  }
+  ::selection {
+    background: var(--wine);
+    color: var(--milk);
+  }
+  :focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 3px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+/* Film grain overlay for a tactile, analog feel */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 70;
+  pointer-events: none;
+  opacity: 0.08;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.1 0 0 0 0 0.08 0 0 0 0 0.07 0 0 0 0.9 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+@utility no-scrollbar {
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@utility mask-arch {
+  border-radius: 999px 999px 0 0;
+}
+
+@utility mask-blob {
+  border-radius: 62% 38% 54% 46% / 52% 44% 56% 48%;
+}
+
+@utility mask-blob-alt {
+  border-radius: 44% 56% 38% 62% / 58% 42% 58% 42%;
+}
