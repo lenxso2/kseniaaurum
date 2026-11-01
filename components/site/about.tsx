@@ -53,11 +53,13 @@ export function About() {
               </Reveal>
             ))}
           </div>
-          <Reveal>
-            <p className="mt-14 border-t border-gold/50 pt-8 font-serif text-3xl font-light leading-snug md:text-5xl">
-              {about.closing}
-            </p>
-          </Reveal>
+          {about.closing && (
+            <Reveal>
+              <p className="mt-14 border-t border-gold/50 pt-8 font-serif text-3xl font-light leading-snug md:text-5xl">
+                {about.closing}
+              </p>
+            </Reveal>
+          )}
         </div>
       </div>
     </Section>
