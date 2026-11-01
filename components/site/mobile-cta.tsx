@@ -2,10 +2,11 @@
 
 import { useEffect, useState } from 'react'
 import { AnimatePresence, motion, useMotionValueEvent, useScroll } from 'framer-motion'
-import { ui } from '@/lib/content'
+import { getContent, type Lang } from '@/lib/i18n'
 import { easeSoft } from './motion'
 
-export function MobileCta() {
+export function MobileCta({ lang = 'ru' }: { lang?: Lang }) {
+  const { ui } = getContent(lang)
   const { scrollY } = useScroll()
   const [pastHero, setPastHero] = useState(false)
   const [contactInView, setContactInView] = useState(false)

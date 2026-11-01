@@ -1,9 +1,10 @@
 import { Fragment } from 'react'
-import { toolkit } from '@/lib/content'
+import { getContent, type Lang } from '@/lib/i18n'
 import { Section } from './section'
 import { Reveal } from './motion'
 
-export function Toolkit() {
+export function Toolkit({ lang = 'ru' }: { lang?: Lang }) {
+  const { toolkit } = getContent(lang)
   return (
     <Section id="toolkit" label={toolkit.label} tone="ocean">
       <Reveal>

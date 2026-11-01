@@ -1,7 +1,8 @@
-import { footer } from '@/lib/content'
+import { getContent, type Lang } from '@/lib/i18n'
 import { contactLinks } from '@/lib/config'
 
-export function SiteFooter() {
+export function SiteFooter({ lang = 'ru' }: { lang?: Lang }) {
+  const { footer } = getContent(lang)
   return (
     <footer className="bg-ink pb-28 text-milk md:pb-0">
       <div className="mx-auto flex max-w-7xl flex-col gap-6 border-t border-milk/10 px-6 py-10 md:flex-row md:items-center md:justify-between md:px-12">

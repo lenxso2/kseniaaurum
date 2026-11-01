@@ -1,9 +1,10 @@
 import { Fragment } from 'react'
-import { philosophy } from '@/lib/content'
+import { getContent, type Lang } from '@/lib/i18n'
 import { Section } from './section'
 import { Reveal } from './motion'
 
-export function Philosophy() {
+export function Philosophy({ lang = 'ru' }: { lang?: Lang }) {
+  const { philosophy } = getContent(lang)
   return (
     <Section id="philosophy" label={philosophy.label} tone="ink" innerClassName="md:py-44">
       <div className="mx-auto max-w-5xl text-center">

@@ -1,8 +1,10 @@
 import { manifesto } from '@/lib/content'
+import { getContent, type Lang } from '@/lib/i18n'
 import { Section } from './section'
 import { Reveal } from './motion'
 
-export function Manifesto() {
+export function Manifesto({ lang = 'ru' }: { lang?: Lang }) {
+  const { manifesto } = getContent(lang)
   return (
     <Section id="manifesto" innerClassName="md:py-40">
       <div className="mx-auto flex max-w-4xl flex-col items-center text-center">

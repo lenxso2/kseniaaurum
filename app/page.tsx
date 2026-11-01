@@ -18,24 +18,24 @@ import { MobileCta } from '@/components/site/mobile-cta'
 export default function Page() {
   return (
     <>
-      <SiteHeader />
+      <SiteHeader lang="ru" />
       <main>
-        <Hero />
-        <Manifesto />
-        <About />
-        <Philosophy />
-        <Directions />
-        <Toolkit />
-        <Places />
-        <Audience />
-        <Formats />
-        <Gallery />
-        <Reviews />
-        <Faq />
-        <FinalCta />
+        <Hero lang="ru" />
+        <Manifesto lang="ru" />
+        <About lang="ru" />
+        <Philosophy lang="ru" />
+        <Directions lang="ru" />
+        <Toolkit lang="ru" />
+        <Places lang="ru" />
+        <Audience lang="ru" />
+        <Formats lang="ru" />
+        <Gallery lang="ru" />
+        <Reviews lang="ru" />
+        <Faq lang="ru" />
+        <FinalCta lang="ru" />
       </main>
-      <SiteFooter />
-      <MobileCta />
+      <SiteFooter lang="ru" />
+      <MobileCta lang="ru" />
     </>
   )
 }

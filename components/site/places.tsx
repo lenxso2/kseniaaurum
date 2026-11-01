@@ -1,10 +1,10 @@
 'use client'
+import { getContent, type Lang } from '@/lib/i18n'
 
 import Image from 'next/image'
 import { useRef, type RefObject } from 'react'
 import { ArrowRight } from 'lucide-react'
 import { motion, useReducedMotion, useScroll, useTransform } from 'framer-motion'
-import { places, ui } from '@/lib/content'
 import { cn } from '@/lib/utils'
 import { Section } from './section'
 import { Reveal } from './motion'
@@ -12,6 +12,7 @@ import { Reveal } from './motion'
 function PlaceCard({
   place,
   index,
+  ui,
   container,
 }: {
   place: (typeof places.items)[number]
@@ -41,7 +42,8 @@ function PlaceCard({
   )
 }
 
-export function Places() {
+export function Places({ lang = 'ru' }: { lang?: Lang }) {
+  const { places, ui } = getContent(lang)
   const containerRef = useRef<HTMLDivElement>(null)
 
   return (

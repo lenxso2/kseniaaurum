@@ -30,6 +30,13 @@ export const metadata: Metadata = {
   title,
   description,
   generator: 'v0.app',
+  alternates: {
+    canonical: '/',
+    languages: {
+      'ru': '/',
+      'en': '/en',
+    },
+  },
   openGraph: {
     type: 'website',
     locale: 'ru_RU',

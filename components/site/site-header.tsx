@@ -2,12 +2,14 @@
 
 import { useEffect, useRef, useState } from 'react'
 import { AnimatePresence, motion, useMotionValueEvent, useScroll } from 'framer-motion'
-import { nav, ui } from '@/lib/content'
 import { contactLinks } from '@/lib/config'
 import { cn } from '@/lib/utils'
+import { getContent, type Lang } from '@/lib/i18n'
 import { easeSoft } from './motion'
+import Link from 'next/link'
 
-export function SiteHeader() {
+export function SiteHeader({ lang = 'ru' }: { lang?: Lang }) {
+  const { nav, ui } = getContent(lang)
   const { scrollY } = useScroll()
   const [hidden, setHidden] = useState(false)
   const [solid, setSolid] = useState(false)
@@ -52,20 +54,31 @@ export function SiteHeader() {
           <a href="#top" className="font-serif text-lg tracking-[0.28em]">
             {ui.wordmark}
           </a>
-          <button
-            ref={toggleRef}
-            type="button"
-            onClick={() => setOpen(true)}
-            aria-expanded={open}
-            aria-controls="site-menu"
-            className="-mr-3 flex min-h-11 items-center gap-3 px-3 text-[11px] uppercase tracking-[0.3em]"
-          >
-            {ui.menu}
-            <span aria-hidden="true" className="flex w-6 flex-col gap-1.5">
-              <span className="h-px w-full bg-current" />
-              <span className="h-px w-2/3 self-end bg-current" />
-            </span>
-          </button>
+          <div className="flex items-center gap-6">
+            <div className="flex gap-2 text-[11px] uppercase tracking-[0.2em]">
+              <Link href="/" className={cn(lang === 'ru' ? 'font-semibold' : 'opacity-60 hover:opacity-100')}>
+                RU
+              </Link>
+              <span className="opacity-30">/</span>
+              <Link href="/en" className={cn(lang === 'en' ? 'font-semibold' : 'opacity-60 hover:opacity-100')}>
+                EN
+              </Link>
+            </div>
+            <button
+              ref={toggleRef}
+              type="button"
+              onClick={() => setOpen(true)}
+              aria-expanded={open}
+              aria-controls="site-menu"
+              className="-mr-3 flex min-h-11 items-center gap-3 px-3 text-[11px] uppercase tracking-[0.3em]"
+            >
+              {ui.menu}
+              <span aria-hidden="true" className="flex w-6 flex-col gap-1.5">
+                <span className="h-px w-full bg-current" />
+                <span className="h-px w-2/3 self-end bg-current" />
+              </span>
+            </button>
+          </div>
         </div>
       </motion.header>
 

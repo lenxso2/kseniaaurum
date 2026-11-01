@@ -4,7 +4,8 @@ import Image from 'next/image'
 import { useEffect, useRef, useState } from 'react'
 import { AnimatePresence, motion, type PanInfo } from 'framer-motion'
 import { ChevronLeft, ChevronRight, X } from 'lucide-react'
-import { gallery, galleryCategories, type GalleryCategory, type GalleryItem } from '@/lib/content'
+import { type GalleryCategory, type GalleryItem } from '@/lib/content'
+import { getContent, type Lang } from '@/lib/i18n'
 import { cn } from '@/lib/utils'
 import { Section } from './section'
 import { easeSoft } from './motion'
@@ -142,7 +143,8 @@ function Lightbox({ items, index, onClose, onIndex }: { items: GalleryItem[]; in
   )
 }
 
-export function Gallery() {
+export function Gallery({ lang = 'ru' }: { lang?: Lang }) {
+  const { gallery, galleryCategories } = getContent(lang)
   const [filter, setFilter] = useState<GalleryCategory | null>(null)
   const [lightbox, setLightbox] = useState<number | null>(null)
   const items = filter ? gallery.items.filter((item) => item.categories.includes(filter)) : gallery.items

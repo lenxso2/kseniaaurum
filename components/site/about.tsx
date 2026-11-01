@@ -1,8 +1,10 @@
 import { about } from '@/lib/content'
+import { getContent, type Lang } from '@/lib/i18n'
 import { Section } from './section'
 import { ParallaxImage, Reveal } from './motion'
 
-export function About() {
+export function About({ lang = 'ru' }: { lang?: Lang }) {
+  const { about } = getContent(lang)
   return (
     <Section id="about" label={about.label}>
       <Reveal>

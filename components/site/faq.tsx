@@ -1,13 +1,14 @@
 'use client'
+import { getContent, type Lang } from '@/lib/i18n'
 
 import { useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
-import { faq } from '@/lib/content'
 import { cn } from '@/lib/utils'
 import { Section } from './section'
 import { Reveal, easeSoft } from './motion'
 
-export function Faq() {
+export function Faq({ lang = 'ru' }: { lang?: Lang}) {
+  const { faq } = getContent(lang)
   const [open, setOpen] = useState<number | null>(null)
 
   return (

@@ -3,8 +3,8 @@
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import { motion, useReducedMotion } from 'framer-motion'
-import { hero } from '@/lib/content'
 import { siteConfig } from '@/lib/config'
+import { getContent, type Lang } from '@/lib/i18n'
 import { easeSoft } from './motion'
 
 type NetworkInformation = { saveData?: boolean; effectiveType?: string }
@@ -19,7 +19,7 @@ function useCanPlayVideo() {
   return canPlay
 }
 
-function HeroMedia() {
+function HeroMedia({ hero }: { hero: ReturnType<typeof getContent>['hero'] }) {
   const reduce = useReducedMotion()
   const canPlayVideo = useCanPlayVideo()
   const video = siteConfig.hero.video
@@ -60,7 +60,8 @@ function HeroMedia() {
   )
 }
 
-export function Hero() {
+export function Hero({ lang = 'ru' }: { lang?: Lang }) {
+  const { hero } = getContent(lang)
   const reduce = useReducedMotion()
   const item = (delay: number) => ({
     initial: reduce ? { opacity: 0 } : { opacity: 0, y: 24 },
@@ -70,7 +71,7 @@ export function Hero() {
 
   return (
     <section id="top" aria-labelledby="hero-heading" className="relative flex min-h-svh flex-col bg-ink text-milk">
-      <HeroMedia />
+      <HeroMedia hero={hero} />
       <div className="relative mx-auto flex w-full max-w-7xl flex-1 flex-col justify-end px-6 pb-16 pt-28 md:px-12 md:pb-24">
         <motion.p {...item(0.3)} className="mb-6 text-[10px] font-medium uppercase tracking-[0.36em] text-milk/85 md:text-xs">
           {hero.tagline}

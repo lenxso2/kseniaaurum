@@ -1,8 +1,8 @@
 'use client'
+import { getContent, type Lang } from '@/lib/i18n'
 
 import { useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
-import { audience } from '@/lib/content'
 import { siteConfig } from '@/lib/config'
 import { cn } from '@/lib/utils'
 import { SectionLabel } from './section'
@@ -14,7 +14,8 @@ const toneClass = {
   terracotta: 'bg-terracotta',
 } as const
 
-export function Audience() {
+export function Audience({ lang = 'ru' }: { lang?: Lang }) {
+  const { audience } = getContent(lang)
   const [open, setOpen] = useState<Record<string, boolean>>({})
 
   return (

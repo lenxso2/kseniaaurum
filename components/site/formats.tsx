@@ -2,7 +2,7 @@
 
 import { useRef, useState, type KeyboardEvent } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
-import { formats } from '@/lib/content'
+import { getContent, type Lang } from '@/lib/i18n'
 import { cn } from '@/lib/utils'
 import { Section } from './section'
 import { Reveal, easeSoft } from './motion'
@@ -10,7 +10,8 @@ import { Reveal, easeSoft } from './motion'
 const modes = ['online', 'offline'] as const
 type Mode = (typeof modes)[number]
 
-export function Formats() {
+export function Formats({ lang = 'ru' }: { lang?: Lang }) {
+  const { formats } = getContent(lang)
   const [mode, setMode] = useState<Mode>('online')
   const tabRefs = useRef<Record<Mode, HTMLButtonElement | null>>({ online: null, offline: null })
   const list = formats[mode]

@@ -1,12 +1,13 @@
 'use client'
+import { getContent, type Lang } from '@/lib/i18n'
 
 import { useRef, useState } from 'react'
-import { reviews } from '@/lib/content'
 import { cn } from '@/lib/utils'
 import { Section } from './section'
 import { Reveal } from './motion'
 
-export function Reviews() {
+export function Reviews({ lang = 'ru' }: { lang?: Lang }) {
+  const { reviews } = getContent(lang)
   const trackRef = useRef<HTMLUListElement>(null)
   const [active, setActive] = useState(0)
 

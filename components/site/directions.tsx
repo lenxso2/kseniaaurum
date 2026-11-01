@@ -2,7 +2,8 @@
 
 import { useState } from 'react'
 import { AnimatePresence, LayoutGroup, motion, useReducedMotion } from 'framer-motion'
-import { directions, type Block, type Direction } from '@/lib/content'
+import { type Block, type Direction } from '@/lib/content'
+import { getContent, type Lang } from '@/lib/i18n'
 import { siteConfig } from '@/lib/config'
 import { cn } from '@/lib/utils'
 import { Section } from './section'
@@ -27,11 +28,13 @@ function DirectionCard({
   index,
   open,
   onToggle,
+  directions,
 }: {
   item: Direction
   index: number
   open: boolean
   onToggle: () => void
+  directions: ReturnType<typeof getContent>['directions']
 }) {
   const reduce = useReducedMotion()
   const teaser = typeof item.body[0] === 'string' ? item.body[0] : ''
@@ -125,7 +128,8 @@ function DirectionCard({
   )
 }
 
-export function Directions() {
+export function Directions({ lang = 'ru' }: { lang?: Lang }) {
+  const { directions } = getContent(lang)
   const [openId, setOpenId] = useState<string | null>(null)
 
   return (
@@ -144,6 +148,7 @@ export function Directions() {
               index={i}
               open={openId === item.id}
               onToggle={() => setOpenId((current) => (current === item.id ? null : item.id))}
+              directions={directions}
             />
           ))}
         </div>

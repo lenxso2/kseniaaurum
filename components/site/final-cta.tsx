@@ -1,9 +1,10 @@
-import { finalCta } from '@/lib/content'
+import { getContent, type Lang } from '@/lib/i18n'
 import { contactLinks, siteConfig } from '@/lib/config'
 import { SectionLabel } from './section'
 import { ParallaxImage, Reveal } from './motion'
 
-export function FinalCta() {
+export function FinalCta({ lang = 'ru' }: { lang?: Lang }) {
+  const { finalCta } = getContent(lang)
   return (
     <section id="contact" aria-labelledby="contact-heading" className="relative flex min-h-svh scroll-mt-0 items-center bg-ink text-milk">
       <ParallaxImage src={finalCta.image.src} alt={finalCta.image.alt} sizes="100vw" strength={5} className="!absolute inset-0" />
