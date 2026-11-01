@@ -12,7 +12,7 @@ export const siteConfig = {
   location: 'Бали',
 
   links: {
-    telegram: 'https://t.me/kseniaaurum',
+    telegram: 'https://t.me/ksenAurum',
     whatsapp: 'https://wa.me/6280000000000',
     instagram: 'https://www.instagram.com/ksenia__aurum',
   },

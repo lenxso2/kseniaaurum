@@ -252,9 +252,9 @@ export const places = {
     { name: 'Крым', src: '/images/place-crimea.webp', alt: 'Закат над морем и кипарисы в Крыму' },
     { name: 'Сочи', src: '/images/place-sochi.webp', alt: 'Бирюзовое ущелье с сапбордом в Сочи' },
     { name: 'Индия', src: '/images/place-india.webp', alt: 'Ксения в красном сари на празднике в Гоа' },
-    { name: 'Гималаи', src: '/images/place-himalayas.webp', alt: 'Ксения и Далай-лама в Гималаях' },
+    { name: 'Гималаи', src: '/images/place-himalayas.webp', alt: 'Ксения получает благословение Далай-ламы в Гималаях' },
     { name: 'Непал', src: '/images/place-nepal.webp', alt: 'Ступа Боднатх с молитвенными флажками в Непале' },
-    { name: 'Панган', src: '/images/place-phangan.webp', alt: 'Ксения в качелях-сердце над рисовыми террасами' },
+    { name: 'Панган', src: '/images/place-phangan.webp', alt: 'Ксения на пляже Пангана, на горизонте зелёные горы' },
     { name: 'Бали', src: '/images/place-bali.webp', alt: 'Рисовые террасы и джунгли Бали под вечерним небом' },
   ],
   paragraphs: [
@@ -303,7 +303,7 @@ export const formats = {
   },
   offline: {
     title: 'OFFLINE',
-    items: ['Тантра', 'Телесные практики', 'Танец', 'Арт-терапия', 'Sound healing', 'Какао-церемонии', 'Тантра-массаж для пар', 'Ретритные практики'],
+    items: ['Тантра', 'Телесные практики', 'Танец', 'Арт-терапия', 'Sound healing', 'Какао-церемонии', 'Чайные церемонии', 'Тантра-массаж для пар', 'Ретритные практики'],
   },
 }
 
@@ -334,10 +334,10 @@ export const gallery = {
     { type: 'image', src: '/images/art.webp', alt: 'Рука с кистью над круглым холстом', categories: ['ART'], aspect: 'square' },
     { type: 'image', src: '/images/place-india.webp', alt: 'Ксения в красном сари на празднике в Гоа', categories: ['INDIA'], aspect: 'portrait' },
     { type: 'image', src: '/images/ritual.webp', alt: 'Какао-церемония: чаши какао, свечи и бубен', categories: ['RITUAL'], aspect: 'landscape' },
-    { type: 'image', src: '/images/place-himalayas.webp', alt: 'Ксения и Далай-лама в Гималаях', categories: ['HIMALAYAS', 'ME'], aspect: 'tall' },
+    { type: 'image', src: '/images/prayer.webp', alt: 'Ксения с молитвенно сложенными руками на фоне тибетских флажков', categories: ['HIMALAYAS', 'ME'], aspect: 'portrait' },
     { type: 'image', src: '/images/dance.webp', alt: 'Свободный танец под тёплыми огнями', categories: ['DANCE', 'BODY'], aspect: 'portrait' },
     { type: 'image', src: '/images/portrait.webp', alt: 'Портрет Ксении в тёплом свете', categories: ['ME'], aspect: 'portrait' },
-    { type: 'image', src: '/images/place-phangan.webp', alt: 'Качели-сердце над рисовыми террасами', categories: ['PANGAN', 'BALI', 'NATURE'], aspect: 'square' },
+    { type: 'image', src: '/images/place-phangan.webp', alt: 'Ксения на пляже Пангана, на горизонте зелёные горы', categories: ['PANGAN', 'NATURE'], aspect: 'square' },
     { type: 'image', src: '/images/nature.webp', alt: 'Банановые листья и рисовые поля после дождя', categories: ['NATURE', 'BALI'], aspect: 'tall' },
     { type: 'image', src: '/images/place-nepal.webp', alt: 'Ступа Боднатх с молитвенными флажками', categories: ['HIMALAYAS'], aspect: 'landscape' },
     { type: 'image', src: '/images/place-bali.webp', alt: 'Рисовые террасы и джунгли Бали', categories: ['BALI', 'NATURE'], aspect: 'portrait' },
