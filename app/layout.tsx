@@ -36,13 +36,13 @@ export const metadata: Metadata = {
     title,
     description,
     siteName: 'Ксения Аурум',
-    images: [{ url: '/images/hero.png', alt: 'Ксения Аурум' }],
+    images: [{ url: '/images/hero.webp', alt: 'Ксения Аурум' }],
   },
   twitter: {
     card: 'summary_large_image',
     title,
     description,
-    images: ['/images/hero.png'],
+    images: ['/images/hero.webp'],
   },
 }
 

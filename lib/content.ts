@@ -39,7 +39,7 @@ export const hero = {
   text: 'Позволь себе чувствовать. Желать. Наслаждаться. Быть. Проявляться.',
   primaryCta: { label: 'ПОЗНАКОМИТЬСЯ СО МНОЙ', href: '#about' },
   secondaryCta: { label: 'ВЫБРАТЬ ПРАКТИКУ', href: '#directions' },
-  imageAlt: 'Ксения Аурум танцует в тропическом лесу на Бали, развевается красная ткань',
+  imageAlt: 'Ксения Аурум танцует в зелёном платье в поле под вечерним небом',
 }
 
 export const manifesto = {
@@ -66,8 +66,8 @@ export const about = {
     'Сегодня я — проводник Нового Времени. Я достаю из Истины то, что хочет проявиться, и помогаю раскрыть твою суть — в теле, жизни, творчестве и деле.',
   ],
   closing: 'Не становиться кем-то другим. А раскрывать то, что уже есть внутри — и позволять этому быть в твоей жизни.',
-  portrait: { src: '/images/portrait.png', alt: 'Портрет Ксении Аурум в мягком естественном свете' },
-  detail: { src: '/images/art.png', alt: 'Руки Ксении рисуют плавные линии тушью и терракотовой краской' },
+  portrait: { src: '/images/portrait.webp', alt: 'Портрет Ксении Аурум в мягком тёплом свете' },
+  detail: { src: '/images/art.webp', alt: 'Рука Ксении с кистью над круглым холстом с портретом' },
 }
 
 export const philosophy = {
@@ -249,13 +249,13 @@ export const places = {
   label: '06 — ПРОСТРАНСТВА',
   headline: 'МОЙ ПУТЬ ПРОХОДИТ ЧЕРЕЗ РАЗНЫЕ ПРОСТРАНСТВА',
   items: [
-    { name: 'Крым', src: '/images/place-crimea.png', alt: 'Прибрежные скалы Крыма на закате' },
-    { name: 'Сочи', src: '/images/place-sochi.png', alt: 'Туманные зелёные горы Сочи над морем' },
-    { name: 'Индия', src: '/images/place-india.png', alt: 'Руки с цветами бархатцев у древних ступеней в Индии' },
-    { name: 'Гималаи', src: '/images/place-himalayas.png', alt: 'Фигура в красной шали перед снежными вершинами Гималаев' },
-    { name: 'Непал', src: '/images/place-nepal.png', alt: 'Молитвенные флажки над горной тропой в Непале' },
-    { name: 'Панган', src: '/images/place-phangan.png', alt: 'Женщина в бирюзовой воде на Пангане' },
-    { name: 'Бали', src: '/images/place-bali.png', alt: 'Рисовые террасы и джунгли Бали в утреннем тумане' },
+    { name: 'Крым', src: '/images/place-crimea.webp', alt: 'Закат над морем и кипарисы в Крыму' },
+    { name: 'Сочи', src: '/images/place-sochi.webp', alt: 'Бирюзовое ущелье с сапбордом в Сочи' },
+    { name: 'Индия', src: '/images/place-india.webp', alt: 'Ксения в красном сари на празднике в Гоа' },
+    { name: 'Гималаи', src: '/images/place-himalayas.webp', alt: 'Ксения и Далай-лама в Гималаях' },
+    { name: 'Непал', src: '/images/place-nepal.webp', alt: 'Ступа Боднатх с молитвенными флажками в Непале' },
+    { name: 'Панган', src: '/images/place-phangan.webp', alt: 'Ксения в качелях-сердце над рисовыми террасами' },
+    { name: 'Бали', src: '/images/place-bali.webp', alt: 'Рисовые террасы и джунгли Бали под вечерним небом' },
   ],
   paragraphs: [
     'Я много лет путешествую, живу в разных странах и исследую человека через разные культуры, традиции и способы взаимодействия с телом и сознанием.',
@@ -329,19 +329,22 @@ export const gallery = {
   heading: 'Галерея',
   allLabel: 'ALL',
   items: [
-    { type: 'image', src: '/images/hero.png', alt: 'Танец с красной тканью в джунглях', categories: ['ME', 'DANCE', 'NATURE', 'BALI'], aspect: 'tall' },
-    { type: 'image', src: '/images/body.png', alt: 'Плечо и спина, укрытые льняной тканью', categories: ['BODY'], aspect: 'portrait' },
-    { type: 'image', src: '/images/art.png', alt: 'Руки рисуют линии тушью и краской', categories: ['ART'], aspect: 'square' },
-    { type: 'image', src: '/images/place-india.png', alt: 'Цветы бархатцев у реки в Индии', categories: ['INDIA'], aspect: 'portrait' },
-    { type: 'image', src: '/images/ritual.png', alt: 'Какао в глиняной чаше рядом с бубном', categories: ['RITUAL'], aspect: 'landscape' },
-    { type: 'image', src: '/images/place-himalayas.png', alt: 'Снежные вершины Гималаев', categories: ['HIMALAYAS', 'NATURE'], aspect: 'tall' },
-    { type: 'image', src: '/images/dance.png', alt: 'Свободный танец в луче тёплого света', categories: ['DANCE', 'BODY'], aspect: 'portrait' },
-    { type: 'image', src: '/images/portrait.png', alt: 'Портрет Ксении', categories: ['ME'], aspect: 'portrait' },
-    { type: 'image', src: '/images/place-phangan.png', alt: 'Вода и пальмы на Пангане', categories: ['PANGAN', 'NATURE'], aspect: 'square' },
-    { type: 'image', src: '/images/nature.png', alt: 'Тропические листья после дождя', categories: ['NATURE', 'BALI'], aspect: 'tall' },
-    { type: 'image', src: '/images/place-nepal.png', alt: 'Молитвенные флажки в горах', categories: ['HIMALAYAS'], aspect: 'landscape' },
-    { type: 'image', src: '/images/place-bali.png', alt: 'Рисовые террасы Бали', categories: ['BALI', 'NATURE'], aspect: 'portrait' },
-    { type: 'image', src: '/images/final.png', alt: 'Океан на рассвете на Бали', categories: ['BALI', 'NATURE', 'ME'], aspect: 'landscape' },
+    { type: 'image', src: '/images/hero.webp', alt: 'Танец в зелёном поле под вечерним небом', categories: ['ME', 'DANCE', 'NATURE'], aspect: 'tall' },
+    { type: 'image', src: '/images/body.webp', alt: 'Ксения обнимает себя в тени сада', categories: ['BODY', 'ME'], aspect: 'portrait' },
+    { type: 'image', src: '/images/art.webp', alt: 'Рука с кистью над круглым холстом', categories: ['ART'], aspect: 'square' },
+    { type: 'image', src: '/images/place-india.webp', alt: 'Ксения в красном сари на празднике в Гоа', categories: ['INDIA'], aspect: 'portrait' },
+    { type: 'image', src: '/images/ritual.webp', alt: 'Какао-церемония: чаши какао, свечи и бубен', categories: ['RITUAL'], aspect: 'landscape' },
+    { type: 'image', src: '/images/place-himalayas.webp', alt: 'Ксения и Далай-лама в Гималаях', categories: ['HIMALAYAS', 'ME'], aspect: 'tall' },
+    { type: 'image', src: '/images/dance.webp', alt: 'Свободный танец под тёплыми огнями', categories: ['DANCE', 'BODY'], aspect: 'portrait' },
+    { type: 'image', src: '/images/portrait.webp', alt: 'Портрет Ксении в тёплом свете', categories: ['ME'], aspect: 'portrait' },
+    { type: 'image', src: '/images/place-phangan.webp', alt: 'Качели-сердце над рисовыми террасами', categories: ['PANGAN', 'BALI', 'NATURE'], aspect: 'square' },
+    { type: 'image', src: '/images/nature.webp', alt: 'Банановые листья и рисовые поля после дождя', categories: ['NATURE', 'BALI'], aspect: 'tall' },
+    { type: 'image', src: '/images/place-nepal.webp', alt: 'Ступа Боднатх с молитвенными флажками', categories: ['HIMALAYAS'], aspect: 'landscape' },
+    { type: 'image', src: '/images/place-bali.webp', alt: 'Рисовые террасы и джунгли Бали', categories: ['BALI', 'NATURE'], aspect: 'portrait' },
+    { type: 'image', src: '/images/final.webp', alt: 'Закат над океаном, силуэт на песке', categories: ['BALI', 'NATURE', 'ME'], aspect: 'landscape' },
+    { type: 'image', src: '/images/artist.webp', alt: 'Ксения с палитрой и росписью на лице', categories: ['ART', 'ME'], aspect: 'portrait' },
+    { type: 'image', src: '/images/dance-field.webp', alt: 'Танец с раскинутыми руками в поле', categories: ['DANCE', 'NATURE'], aspect: 'tall' },
+    { type: 'image', src: '/images/dalai-lama.webp', alt: 'Встреча с Далай-ламой в Гималаях', categories: ['HIMALAYAS', 'ME'], aspect: 'landscape' },
   ] satisfies GalleryItem[] as GalleryItem[],
 }
 
@@ -405,7 +408,7 @@ export const finalCta = {
     'Напиши мне о себе и о том, что сейчас происходит в твоей жизни.',
   ],
   button: 'НАПИСАТЬ КСЕНИИ',
-  image: { src: '/images/final.png', alt: 'Спокойный океан на рассвете, женщина сидит на тёмном песке' },
+  image: { src: '/images/final.webp', alt: 'Женщина сидит спиной к камере на тёмном песке у океана на закате' },
 }
 
 export const footer = {

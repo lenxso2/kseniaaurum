@@ -19,7 +19,7 @@ export const siteConfig = {
 
   hero: {
     video: null as string | null,
-    poster: '/images/hero.png',
+    poster: '/images/hero.webp',
   },
 }
 
