@@ -28,15 +28,19 @@ function HeroMedia() {
     <div className="absolute inset-0 overflow-hidden" aria-hidden={video && canPlayVideo ? 'true' : undefined}>
       <motion.div
         className="absolute inset-0"
-        initial={{ scale: 1.12, opacity: 0 }}
-        animate={reduce ? { scale: 1, opacity: 1 } : { scale: [1.12, 1.04, 1.08], opacity: 1 }}
-        transition={
-          reduce
-            ? { duration: 0.6 }
-            : { scale: { duration: 22, ease: 'easeInOut', repeat: Infinity, repeatType: 'mirror' }, opacity: { duration: 1.6 } }
-        }
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1.6 }}
       >
-        <Image src={siteConfig.hero.poster} alt={hero.imageAlt} fill priority sizes="100vw" className="object-cover object-center" />
+        <Image
+          src={siteConfig.hero.poster}
+          alt={hero.imageAlt}
+          fill
+          priority
+          quality={90}
+          sizes="100vw"
+          className="object-cover object-center"
+        />
         {video && canPlayVideo && !reduce ? (
           <video
             className="absolute inset-0 h-full w-full object-cover"
